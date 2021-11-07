@@ -1,7 +1,7 @@
 const userdetailsReducer = (state = "", action) => {
     switch(action.type){
         case 'LOGIN':
-            return state + action.username;
+            return action.username;
         default:
             return state;
     }

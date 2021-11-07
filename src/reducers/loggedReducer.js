@@ -3,7 +3,7 @@ const loggedReducer = (state = false, action) => {
         case 'LOGIN':
             return !state;
         default:
-            return state;
+            return false;
     }
 };
 

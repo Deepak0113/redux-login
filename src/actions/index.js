@@ -1,6 +1,6 @@
-export const userdetails = (username) => {
+export const userdetails = (logtype, username) => {
     return {
-        type: "LOGIN",
+        type: logtype,
         username: username
     }
 }
