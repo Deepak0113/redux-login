@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Login from './Login';
 import TopNav from './TopNav';
 import {
@@ -6,8 +6,9 @@ import {
     Routes,
     Route
 } from "react-router-dom";
-import Home from './Home';
-  
+import Home from './Home'; 
+import { useDispatch } from 'react-redux';
+import { userdetails } from './actions';
 
 const style = {
     app: {
@@ -24,6 +25,15 @@ const style = {
 }
 
 function App() {
+    const dispatch = useDispatch()
+
+    useEffect(() => {
+        let uname = localStorage.getItem("username");
+        if(uname){
+            dispatch(userdetails("LOGIN", uname))
+        }
+    },[])
+
     return (
         <div style={{...style.app}}>
             <Router>

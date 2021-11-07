@@ -28,11 +28,13 @@ function Login() {
     const isLogging = useSelector(state => state.isLogged);
 
     const loginBtn = () => {
+        localStorage.setItem("username", username)
         dispatch(userdetails("LOGIN", username))
         setUsername("")
     }
 
     const logoutBtn = () => {
+        localStorage.removeItem("username")
         dispatch(userdetails("LOGOUT", ""))
         setUsername("")
     }
